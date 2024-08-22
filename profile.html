@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kingsukh Guest House - Booking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Kingsukh Guest House</h1>
+        <nav>
+            <ul>
+                <li><a href="#rooms">Rooms</a></li>
+                <li><a href="#booking">Book a Room</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="rooms">
+        <h2>Our Rooms</h2>
+        <div class="room-container">
+            <div class="room">
+                <img src="caridar.jpeg" alt="Standard Room">
+                <h3>Standard Room</h3>
+                <p>Comfortable room with basic amenities.</p>
+                <p>Price: $500/night</p>
+            </div>
+            <div class="room">
+                <img src="inhouse.jpeg" alt="Deluxe Room">
+                <h3>Deluxe Room</h3>
+                <p>Spacious room with additional facilities.</p>
+                <p>Price: $800/night</p>
+            </div>
+            <div class="room">
+                <img src="bigroom.jpeg" alt="Suite">
+                <h3>Suite</h3>
+                <p>Luxurious suite with premium features.</p>
+                <p>Price: $1500/night</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking">
+        <h2>Book a Room</h2>
+        <form id="bookingForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="roomType">Room Type:</label>
+            <select id="roomType" name="roomType" required>
+                <option value="standard">Standard Room</option>
+                <option value="deluxe">Deluxe Room</option>
+                <option value="suite">Suite</option>
+            </select>
+
+            <label for="checkIn">Check-in Date:</label>
+            <input type="date" id="checkIn" name="checkIn" required>
+
+            <label for="checkOut">Check-out Date:</label>
+            <input type="date" id="checkOut" name="checkOut" required>
+
+            <button type="submit">Book Now</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Kingsukh Guest House. All Rights Reserved.</p>
+    </footer>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        header nav ul li {
+            margin: 0 20px;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        #rooms .room-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .room {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            margin: 20px;
+            flex: 1 1 calc(33% - 40px);
+            box-sizing: border-box;
+        }
+
+        .room img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        form input, form select, form button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        form button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        form button:hover {
+            background-color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+    </style>
+
+    <script>
+        document.getElementById('bookingForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const roomType = document.getElementById('roomType').value;
+            const checkIn = document.getElementById('checkIn').value;
+            const checkOut = document.getElementById('checkOut').value;
+
+            const bookingDetails = `
+                Name: ${name}\n
+                Email: ${email}\n
+                Room Type: ${roomType}\n
+                Check-in Date: ${checkIn}\n
+                Check-out Date: ${checkOut}\n
+            `;
+
+            alert("Booking Confirmed:\n" + bookingDetails);
+        });
+    </script>
+</body>
+</html>
